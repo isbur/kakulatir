@@ -7,14 +7,22 @@ class RASCHITATi extends React.Component{
         this.state = {
             deficator1: 'I am deficator1',
              deficator2: '',
-              deficator3: ''
+              deficator3: '',
+                deficator4: "atvet?"
         };
         
         this.onClickHandler = this.onClickHandler.bind(this)
     }
     
-    onClickHandler(){
-        console.log(this.state.deficator1)
+    onClickHandler(e){
+        e.preventDefault()
+    var xhr = new XMLHttpRequest()
+    xhr.addEventListener('load', () => {
+      console.log(xhr.responseText)
+    })
+    xhr.open('GET', 'https://tepid-ruddy-code.anvil.app/_/api/vixod/10/2/255')
+    xhr.send()
+        this.setState({deficator4: this.state.deficator1})
     }
     
     render(){
@@ -28,7 +36,7 @@ class RASCHITATi extends React.Component{
                 </div>
                 <button type="submit" className="btn btn-primary" onClick = {this.onClickHandler} >RASCHITATi</button>
               </form>
-              <h1 className="display-1">ATVET?</h1>
+              <h1 className="display-1">{this.state.deficator4}</h1>
               </div>
           )
 
